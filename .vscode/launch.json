@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Start Chatbot (Frontend + Backend)",
+      "configurations": ["Python Debugger: Flask", "React App"]
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Python Debugger: Flask",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "flask",
+      "env": {
+        "FLASK_APP": "${workspaceFolder}/backend/app.py",
+        "FLASK_DEBUG": "1"
+      },
+      "args": ["run", "--no-debugger", "--no-reload"],
+      "jinja": true,
+      "cwd": "${workspaceFolder}/backend",
+      "autoStartBrowser": false
+    },
+    {
+      "name": "React App",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm start",
+      "cwd": "${workspaceFolder}/frontend"
+    }
+  ]
+}
