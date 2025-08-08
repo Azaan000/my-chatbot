@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Configuration
-OPENROUTER_API_KEY = os.getenv('')
+OPENROUTER_API_KEY = os.getenv('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')
 OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
 # Inject knowledge (you can also load this from a file)
