@@ -1,1 +1,2 @@
-web: python backend/app.py && cd frontend && npm run build
+web: python backend/app.py
+frontend: cd frontend && npm install && npm run build
