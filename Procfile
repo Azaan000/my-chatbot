@@ -1,2 +1,1 @@
-web: python backend/app.py
-frontend: cd frontend && npm install && npm run build
+web: gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers=1 --timeout 120
