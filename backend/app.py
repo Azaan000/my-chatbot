@@ -1,11 +1,17 @@
+
+import os
 import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables
 
 app = Flask(__name__)
 CORS(app)
 
-OPENROUTER_API_KEY = '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'
+# Configuration
+OPENROUTER_API_KEY = os.getenv('')
 OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
 # Inject knowledge (you can also load this from a file)
@@ -89,3 +95,7 @@ def chat():
         reply = "Sorry, I couldn't process your request."
 
     return jsonify({"response": reply})
+    
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
